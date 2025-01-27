@@ -1,0 +1,51 @@
+// styling for the list-quizs component
+
+
+#myquiz{        
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid #c3c3c3;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--gray-700);
+    word-wrap: break-word;
+    background-color: #f0f0f0;
+}
+#myquiz h3{
+    margin: 0;
+}
+#myquiz p{
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--gray-500);
+}
+#myquiz .buttons{
+   display: flex;
+    justify-content: space-between;
+
+}
+#myquiz .buttons button{
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+#myquiz .buttons a{
+    color:#f6b119;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    font-size: 16px;
+
+}
+#myquiz .buttons button:nth-of-type(1){
+    color:#16b78b;
+}
+#myquiz .buttons button:nth-of-type(2){
+    color:#e74c3c;
+}

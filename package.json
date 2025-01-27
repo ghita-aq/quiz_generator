@@ -1,0 +1,25 @@
+{
+  "name": "quiz_generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghita-aq/quiz_generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghita-aq/quiz_generator/issues"
+  },
+  "homepage": "https://github.com/ghita-aq/quiz_generator#readme",
+  "description": "",
+  "dependencies": {
+    "@angular/material": "^19.1.1",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.2"
+  }
+}

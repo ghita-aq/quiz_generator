@@ -1,0 +1,199 @@
+<style>
+
+
+  .landing {
+    /* background-image: url('/assets/wallapaper.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); */
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    height: 100vh;
+  }
+  .landing::before {
+    margin-top: 100px;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/wallapaper.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+  .landing h1 {
+    margin-top: 1.75rem;
+    font-weight: bolder;
+  }
+
+  .landing p {
+    margin-top: 1.5rem;
+    /* font-weight: bold; */
+  }
+
+  
+  @media screen and (max-width: 650px) {
+    .content {
+      flex-direction: column;
+      width: max-content;
+    }
+
+  }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.25rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.25rem;
+    }
+    
+    nav a {
+        --pill-accent: green;
+        background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+        color: green;
+        padding-inline: 0.75rem;
+        padding-block: 0.375rem;
+        border-radius: 2.75rem;
+        border: 0;
+        transition: background 0.3s ease;
+        font-family: var(--inter-font);
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.4rem;
+        letter-spacing: -0.00875rem;
+        text-decoration: none;
+        }
+        
+        nav a:hover {
+        background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+        }
+        
+        nav a:nth-child(6n + 1) {
+        --pill-accent: green;
+        }
+        
+        nav a:nth-child(6n + 2) {
+        --pill-accent: green;
+        }
+        
+        nav a:nth-child(6n + 3),
+        nav a:nth-child(6n + 4),
+        nav a:nth-child(6n + 5) {
+        --pill-accent: green;
+    }
+    
+    nav button svg {
+        margin-inline-start: 0.25rem;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+        height: 80vh;
+        margin-top: 5rem;
+     
+    }
+    .created {
+        border: 2px solid #c3c3c3;
+
+        border-radius: 0.5rem;
+        width: 100%;
+        height: 80vh;
+        max-width: 900px;
+        padding: 1rem;
+        overflow-y: auto;
+        display: flex ;
+        flex-direction: column;
+        
+    }
+    h3{
+        color: var(--gray-700);
+    }
+    section{
+
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 32%);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+        height: 100%;
+        
+    }
+    @media screen and (max-width: 650px) {
+    .list {
+        
+        width: max-content;
+
+    }
+
+  }
+</style>
+<main class="main">
+    <div class="content">
+  
+      
+        <div class="landing">
+        <h1>Hello! Ready to create a quiz?</h1>
+        <p>Unleash your creativity and captivate your audience with our easy-to-use quiz generator!  🎉</p>
+        </div>
+     
+        <div class="list">
+
+            <div class="created">
+                 
+     
+         <nav>
+             <h2>Quizs List</h2>
+             <ul>
+               <li><a [routerLink]="['/create']">Create Quiz</a></li>
+             </ul>
+            </nav>
+     
+                 
+     
+         <section id="quizzes"> 
+     
+                 @for (q of quizs; track q.id) {
+                     <div id="myquiz" >
+                         <h3>{{ q.name }}</h3>
+                         <p>{{ q.description }}</p>
+                         <div class="buttons">
+                         <a [routerLink]="['/edit', q.id]"><i class="fa-solid fa-pen-to-square"></i></a>
+                         <button (click)="this.donwloadQuiz(q.id)"><i class="fa-solid fa-download"></i></button>
+                         <button (click)="this.deleteQuiz(q.id)"><i class="fa-solid fa-trash"></i></button>
+                         </div>
+                     </div>
+                 }
+     
+           </section>
+         
+     </div>
+     </div>
+     
+      
+     
+    
+    </div>
+    
+  </main>
